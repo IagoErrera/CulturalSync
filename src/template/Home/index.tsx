@@ -14,6 +14,10 @@ const HomePage = () => {
     const [plan, setPlan] = useState<'PPU' | 'Monthly' | 'Yearly' | null>();
     const [sent, setSent] = useState<boolean>(false);
 
+    const handleSubmit = () => {
+        setSent(true);
+    };
+
     return (
         <S.Container>
             <S.Bar>
@@ -189,7 +193,7 @@ const HomePage = () => {
 
                             <div>
                                 <S.FormText>
-                                    Em qual setor sua empresa atua?
+                                    Quais funcionalidades mais te interessam?
                                 </S.FormText>
                                 <S.FormObsText>
                                     Escolha até 3 funcionalidades
@@ -272,9 +276,7 @@ const HomePage = () => {
                             </S.PlanContainer>
                             <S.ConfirmWrapper>
                                 <S.ConfirmButton>
-                                    <S.ConfirmText
-                                        onClick={() => setSent(true)}
-                                    >
+                                    <S.ConfirmText onClick={handleSubmit}>
                                         Confirmar
                                     </S.ConfirmText>
                                 </S.ConfirmButton>
